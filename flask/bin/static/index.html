@@ -84,9 +84,9 @@
 				    <div class="list" ng-show="todolist.length > 0" ng-repeat="item in todolist">
 
 				    	<hr>
-
 				    	<p>{{ item.title }}</p>
 				    	<p>{{ item.description }}</p>
+				    	<button class="btn btn-default form-control" ng-click="delete(item.id)">Delete</button>
 
 				    </div>
 				</div>

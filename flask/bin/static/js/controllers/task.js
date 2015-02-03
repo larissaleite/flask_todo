@@ -5,7 +5,17 @@ angular.module('todo', [])
   		.success(function(response) {
   			console.log(response);
   			$scope.todolist = response.tasks;
-  		});  	
+  		});
+
+    $scope.delete = function(id) {
+
+      $http.delete('/todo/api/v1.0/tasks/' + id)
+        .success(function(response) {
+          console.log(response);
+          $scope.todolist = response.tasks;
+        });
+
+    }  	
 
   	$scope.register = function() {
   		
@@ -18,7 +28,6 @@ angular.module('todo', [])
   			.success(function(response) {
           console.log(response);
           $scope.todolist = response.tasks;
-          console.log($scope.todolist.length);
   			});
   	}
 
